@@ -1,9 +1,7 @@
-const usingMockDb = (process.env.USE_MOCK_DB || '').toLowerCase();
-let itemDaoPath = './Item/StrawDao';
+const usingMockDb = Boolean((process.env.USE_MOCK_DB || '').toLowerCase());
+const itemDaoPath = `./Item/StrawDao${usingMockDb ? '.mock': ''}`;
 
-if (usingMockDb === 'true') {
-    itemDaoPath += '.mock';
-}
+console.log(itemDaoPath)
 
 // tslint:disable:no-var-requires
-export const { ItemDao } = require(itemDaoPath);
+export const { StrawItemDao} = require(itemDaoPath);

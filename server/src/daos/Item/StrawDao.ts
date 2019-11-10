@@ -7,7 +7,7 @@ export interface ItemDao<T> {
     delete: (id: number) => Promise<T>;
 }
 
-export class StrawDao implements ItemDao<Item> {
+export class StrawItemDao implements ItemDao<Item> {
 
     /**
      *

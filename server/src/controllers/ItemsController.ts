@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
 import { BAD_REQUEST, CREATED, OK } from 'http-status-codes';
-import { ItemDao } from '@daos';
+import { StrawItemDao } from '@daos';
 import { logger } from '@shared';
 
-const itemsDao = new ItemDao();
+const itemsDao = new StrawItemDao();
 
 export async function getAllItems(req: Request, res: Response){
     try {
@@ -16,4 +16,3 @@ export async function getAllItems(req: Request, res: Response){
         });
     }
 }
-
