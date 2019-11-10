@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
 import { BAD_REQUEST, CREATED, OK } from 'http-status-codes';
-import { UserDao } from '@daos';
+import { ItemDao } from '@daos';
 import { logger } from '@shared';
 
-const itemsDao = new UserDao();
+const itemsDao = new ItemDao();
 
 export async function getAllItems(req: Request, res: Response){
     try {
@@ -15,4 +15,5 @@ export async function getAllItems(req: Request, res: Response){
             error: err.message,
         });
     }
-};
+}
+

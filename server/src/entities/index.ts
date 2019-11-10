@@ -1,4 +1,4 @@
-import { Image } from './Image';
-import { StrawItem } from './StrawItem';
+import { Image, StrawImage } from './StrawImage';
+import { Item, StrawItem } from './StrawItem';
 
-export { Image, StrawItem };
+export { Image, Item, StrawImage, StrawItem };

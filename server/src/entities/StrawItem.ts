@@ -1,13 +1,22 @@
-import { Image } from './Image';
+import { Image } from './StrawImage';
 
-export class StrawItem{
+export interface Item{
     id?: number;
     name: string;
     description: string;
     images: Array<Image>;
-    constructor(name: string, description: string){
+}
+
+export class StrawItem implements Item{
+    id?: number;
+    name: string;
+    description: string;
+    fullDescription?: string;
+    images: Array<Image>;
+    constructor(name: string, description: string, fullDescription?: string){
         this.name = name;
         this.description = description;
+        this.fullDescription = fullDescription;
         this.images = [];
     };
 };
