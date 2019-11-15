@@ -21,7 +21,7 @@ export class StrawItemDao implements ItemDao<Item> {
      *
      * @param user
      */
-    public async add(user: Item): Promise<Item> {
+    public async add(item: Item): Promise<Item> {
         // TODO
         return {} as any;
     }
@@ -30,7 +30,7 @@ export class StrawItemDao implements ItemDao<Item> {
      *
      * @param user
      */
-    public async update(user: Item): Promise<Item> {
+    public async update(item: Item): Promise<Item> {
         // TODO
         return {} as any;
     }
