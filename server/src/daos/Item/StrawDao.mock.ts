@@ -42,7 +42,7 @@ export class StrawItemDao extends MockDaoMock implements ItemDao<StrawItem> {
         }
     }
 
-    public async delete(id: number): Promise<Item> {
+    public async delete(id: number): Promise<Item | null> {
         try {
             const db = await super.openDb();
             for (let i = 0; i < db.items.length; i++) {
@@ -53,7 +53,7 @@ export class StrawItemDao extends MockDaoMock implements ItemDao<StrawItem> {
                     return deletedItem;
                 }
             }
-            throw new Error('item not found');
+            return null;
         } catch (err) {
             throw err;
         }

@@ -4,7 +4,7 @@ export interface ItemDao<T> {
     getAll: () => Promise<Array<T>>;
     add: (user: T) => Promise<T>;
     update: (user: T) => Promise<T>;
-    delete: (id: number) => Promise<T>;
+    delete: (id: number) => Promise<T | null>;
 }
 
 export class StrawItemDao implements ItemDao<Item> {
@@ -39,7 +39,7 @@ export class StrawItemDao implements ItemDao<Item> {
      *
      * @param id
      */
-    public async delete(id: number): Promise<Item> {
+    public async delete(id: number): Promise<Item | null> {
         // TODO
         return {} as any;
     }
