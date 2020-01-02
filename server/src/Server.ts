@@ -1,5 +1,6 @@
 import cookieParser from 'cookie-parser';
 import express, { Request, Response, NextFunction} from 'express';
+import { NOT_FOUND } from 'http-status-codes';
 import logger from 'morgan';
 import { logger as log } from '@shared';
 import BaseRouter from './routes';
@@ -31,6 +32,10 @@ app.use('/api', (error: Error, request: Request, response: Response, next: NextF
             {error: 'Internal server error'};
         response.json(resJSON);
     }
+});
+
+app.use('*', (request: Request, response: Response) => {
+    response.status(NOT_FOUND).send();
 });
 
 // Export express instance
